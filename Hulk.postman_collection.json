@@ -1,0 +1,1424 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Hulk",
+		"_postman_id": "d1746450-5331-9186-a9eb-f106cf8425ba",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "优惠券",
+			"description": "",
+			"item": [
+				{
+					"name": "创建",
+					"request": {
+						"url": "localhost:7001/coupon/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"memberId\":1,\n    \"type\":1,\n    \"source\":1,\n    \"remark\":\"123123\",\n    \"status\": 1,\n    \"creator\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "更新",
+					"request": {
+						"url": "localhost:7001/coupon/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":2,\n\t\"status\":1,\n    \"operator\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查找",
+					"request": {
+						"url": "localhost:7001/coupon/findAll",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"memberId\":1,\n    \"type\":1,\n    \"source\":1,\n    \"remark\":\"123123\",\n    \"status\": 1,\n    \"creator\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "会员等级ok",
+			"description": "",
+			"item": [
+				{
+					"name": "新建会员等级",
+					"request": {
+						"url": "localhost:7001/memberLevel/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"高级会员\",\n    \"threshold\": 1600,\n    \"apply\": 1,\n    \"buyChip\": 1,\n    \"consume\": 1,\n    \"status\": 1,\n    \"creator\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "更新会员等级",
+					"request": {
+						"url": "localhost:7001/memberLevel/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\":2,\n  \"name\": \"高级会员\",\n    \"threshold\": 1600,\n    \"apply\": 2,\n    \"buyChip\": 2,\n    \"consume\": 2,\n    \"status\": 1,\n    \"creator\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询会员等级",
+					"request": {
+						"url": "localhost:7001/memberLevel/findAll",
+						"method": "GET",
+						"header": [
+							{
+								"key": "//Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "会员管理ok",
+			"description": "",
+			"item": [
+				{
+					"name": "创建会员",
+					"request": {
+						"url": "localhost:7001/member/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"phoneNo\":\"18918221234\", \n\t\"name\":\"芦苇\", \n\t\"idCardNo\":\"310115198809091111\",\n\t\"gender\":1, \n\t\"memberLevelId\":2,\n\t\"status\":1,\n\t\"creator\":1, \n\t\"cardNo\":\"88888888\",\n\t\"wechatOpenId\":\"abcd1234\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询会员(openId)",
+					"request": {
+						"url": "localhost:7001/member/findByWechatOpenId?wechatOpenId=abcd1234",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "更新会员",
+					"request": {
+						"url": "localhost:7001/member/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"id\":1, \n\t\"name\":\"芦苇\", \n\t\"phoneNo\": \"18918223333\",\n\t\"idCardNo\":\"310115198809091111\",\n\t\"gender\":2, \n\t\"status\":2,\n\t\"updator\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询会员(id)",
+					"request": {
+						"url": "localhost:7001/member/findById?id=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询余额及积分",
+					"request": {
+						"url": "localhost:7001/member/findTotal?memberId=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询会员",
+					"request": {
+						"url": "localhost:7001/member/findMembers",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询会员余额",
+					"request": {
+						"url": "localhost:7001/member/findMembersBalance",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询会员积分",
+					"request": {
+						"url": "localhost:7001/member/findMembersPoints",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "充值返现设置ok",
+			"description": "",
+			"item": [
+				{
+					"name": "充值返现设置新增",
+					"request": {
+						"url": "localhost:7001/rechargeSetup/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\t\n \t\"threshold\": 0.01,\n    \"reward\": 40,\n    \"remark\": \"remark\",\n    \"status\": 1,\n    \"creator\": 1\n }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "获取最大返现值",
+					"request": {
+						"url": "localhost:7001/rechargeSetup/findMax?threshold=60",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "获取所有返现",
+					"request": {
+						"url": "localhost:7001/rechargeSetup/findAll",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "充值返现设置更新",
+					"request": {
+						"url": "localhost:7001/rechargeSetup/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\t\n \t\"id\":1,\n \t\"threshold\": 20,\n    \"reward\": 40,\n    \"remark\": \"remark\",\n    \"status\": 1,\n    \"updator\": 1\n }"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "帐户管理ok",
+			"description": "",
+			"item": [
+				{
+					"name": "创建充值记录",
+					"request": {
+						"url": "localhost:7001/balance/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"memberId\":1, \n\t\"type\":1, \n\t\"amount\":500,\n\t\"source\":1, \n\t\"sourceNo\":\"1111111\", \n\t\"remark\":\"remarkkkkkkk\"\n\t\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询充值记录",
+					"request": {
+						"url": "localhost:7001/balance/findEntries?memberId=1&type=1&pageIndex=1&pageSize=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"memberId\":1, \"type\":1, \"amount\":100,\"isPositive\":true, \"source\":1, \"sourceNo\":\"1111111\", \"remark\":\"remarkkkkkkk\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询余额",
+					"request": {
+						"url": "localhost:7001/balance/totalByMemberId?memberId=1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"memberId\":1, \"type\":1, \"amount\":100,\"isPositive\":true, \"source\":1, \"sourceNo\":\"1111111\", \"remark\":\"remarkkkkkkk\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "微信Token(ok)",
+			"description": "",
+			"item": [
+				{
+					"name": "创建token",
+					"request": {
+						"url": "localhost:7001/wechatToken/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"access_token\":\"asfasdfasdf\",\n\t\"expires_in\":7200,\n\t\"refresh_token\":\"asdfasdfasdfasdf\",\n\t\"openid\":\"abcd1234\",\n\t\"scope\":\"aaaa\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询token",
+					"request": {
+						"url": "localhost:7001/wechatToken/findByOpenId?openid=abcd1234",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"access_token\":\"asfasdfasdf\",\n\t\"expires_in\":72000,\n\t\"openid\":\"abcd1234\",\n\t\"scope\":\"aaaa\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "更新",
+					"request": {
+						"url": "localhost:7001/wechatToken/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"access_token\":\"222222222\",\n\t\"expires_in\":7200,\n\t\"refresh_token\":\"1111111111\",\n\t\"openid\":\"abcd1234\",\n\t\"scope\":\"aaaa\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "微信支付ok",
+			"description": "",
+			"item": [
+				{
+					"name": "创建微信支付记录",
+					"request": {
+						"url": "localhost:7001/wechatPayment/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"memberId\":1,\n\t\"appid\":\"appid\", \n\t\"body\":\"body\",\n\t\"mch_id\":\"mch_id\",\n\t\"nonce_str\":\"nonce_str\",\n\t\"notify_url\":\"notify_url\",\n\t\"openid\":\"openid\", \n\t\"out_trade_no\":\"out_trade_no\",\n\t\"spbill_create_ip\":\"spbill_create_ip\", \n\t\"total_fee\":1,\n\t\"trade_type\":\"JSAPI\", \n\t\"creator\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查找微信支付记录",
+					"request": {
+						"url": "localhost:7001/wechatPayment/findEntry?memberId=1&out_trade_no=out_trade_no",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "接收微信回调通知",
+					"request": {
+						"url": "localhost:7001/wechatPayment/notify",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"out_trade_no\":\"out_trade_no\",\n\t\"transaction_id\":\"transaction_id\", \n\t\"time_end\":\"time_end\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "报名及成绩ok",
+			"description": "",
+			"item": [
+				{
+					"name": "线上报名参赛",
+					"request": {
+						"url": "localhost:7001/attendance/createOnline",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"memberId\":1,\n\t\"matchId\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "获取参赛会员",
+					"request": {
+						"url": "localhost:7001/attendance/findAttendances?matchId=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "获取战绩",
+					"request": {
+						"url": "localhost:7001/attendance/findRankingByMemberId?memberId=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "取消参赛",
+					"request": {
+						"url": "localhost:7001/attendance/del",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "线下报名参赛",
+					"request": {
+						"url": "localhost:7001/attendance/createOffline",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phoneNo\":\"18918221234\",\n\t\"matchId\":1,\n\t\"matchPriceId\":2,\n\t\"payType\":3,\n\t\"couponId\":1,\n\t\"creator\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "用户ok",
+			"description": "",
+			"item": [
+				{
+					"name": "新增",
+					"request": {
+						"url": "localhost:7001/user/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phoneNo\":\"18918222234\",\n\t\"name\":\"ceshi\",\n\t\"idCardNo\":\"310115198709111111\",\n\t\"roleType\":\"1\",\n\t\"gender\":1,\n\t\"status\":1,\n\t\"creator\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "更新",
+					"request": {
+						"url": "localhost:7001/user/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":2,\n\t\"phoneNo\":\"18918222234\",\n\t\"name\":\"ces1hi\",\n\t\"idCardNo\":\"310115198709111111\",\n\t\"roleType\":\"1\",\n\t\"gender\":1,\n\t\"status\":1,\n\t\"creator\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "根据手机号查找",
+					"request": {
+						"url": "localhost:7001/user/findByPhoneNo?phoneNo=18918222234",
+						"method": "GET",
+						"header": [
+							{
+								"key": "//Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查找所有用户",
+					"request": {
+						"url": "localhost:7001/user/findByPhoneNo?phoneNo=18918222234",
+						"method": "GET",
+						"header": [
+							{
+								"key": "//Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "短信ok",
+			"description": "",
+			"item": [
+				{
+					"name": "验证码",
+					"request": {
+						"url": "http://115.159.94.198:7002/alidayu/secretCode",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\":1,\n\t\"phoneNo\":\"18918229973\",\n\t\"code\":\"123456\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "帐户充值",
+					"request": {
+						"url": "localhost:7002/alidayu/balancePlus",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\":1,\n\t\"phoneNo\":\"18918229973\",\n\t\"name\":\"芦苇\",\n\t\"amount\":\"100\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "帐户消费",
+					"request": {
+						"url": "localhost:7002/alidayu/balanceMinus",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\":1,\n\t\"phoneNo\":\"18918229973\",\n\t\"name\":\"芦苇\",\n\t\"amount\":\"100\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "积分增加",
+					"request": {
+						"url": "localhost:7002/alidayu/loyaltyPointPlus",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\":1,\n\t\"phoneNo\":\"18918229973\",\n\t\"name\":\"芦苇\",\n\t\"points\":\"100\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "积分扣减",
+					"request": {
+						"url": "localhost:7002/alidayu/loyaltyPointMinus",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\":1,\n\t\"phoneNo\":\"18918229973\",\n\t\"name\":\"芦苇\",\n\t\"points\":\"100\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "报名参赛",
+					"request": {
+						"url": "http://115.159.94.198:7002/alidayu/matchAttend",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\":1,\n\t\"phoneNo\":\"15921576337\",\n\t\"name\":\"俞莫名\",\n\t\"match\":\"莫名其妙\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "积分管理ok",
+			"description": "",
+			"item": [
+				{
+					"name": "创建积分记录",
+					"request": {
+						"url": "localhost:7001/point/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"memberId\":1,\n\t\"type\":1, \n\t\"points\":400,\n\t\"source\":1, \n\t\"sourceNo\":\"1111111\", \n\t\"remark\":\"remarkkkkkkk\"\n\t\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询积分记录",
+					"request": {
+						"url": "localhost:7001/point/findEntries?memberId=1&pageIndex=1&pageSize=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"memberId\":1, \"type\":1, \"amount\":100,\"isPositive\":true, \"source\":1, \"sourceNo\":\"1111111\", \"remark\":\"remarkkkkkkk\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询积分余额",
+					"request": {
+						"url": "localhost:7001/point/totalByMemberId?memberId=1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"memberId\":1, \"type\":1, \"amount\":100,\"isPositive\":true, \"source\":1, \"sourceNo\":\"1111111\", \"remark\":\"remarkkkkkkk\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "筹码ok",
+			"description": "",
+			"item": [
+				{
+					"name": "购买筹码",
+					"request": {
+						"url": "localhost:7001/chip/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"memberId\":1, \n\t\"matchId\":1, \n\t\"quantity\":1, \n\t\"payType\":2, \n\t\"payAmount\":400, \n\t\"remark\":\"remark\", \n\t\"creator\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "签到ok",
+			"description": "",
+			"item": [
+				{
+					"name": "签到",
+					"request": {
+						"url": "localhost:7001/signIn/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"memberId\":2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "签到统计",
+					"request": {
+						"url": "localhost:7001/signIn/signInStats?startDatetime=2017-03-01&endDatetime=2017-03-30",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"memberId\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "豪气ok",
+			"description": "",
+			"item": [
+				{
+					"name": "查询豪气",
+					"request": {
+						"url": "http://localhost:7001/sprit/spritRanking?startDatetime=2017-03-03&endDatetime=2017-03-30",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "赛事ok",
+			"description": "",
+			"item": [
+				{
+					"name": "创建赛事",
+					"request": {
+						"url": "localhost:7001/match/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "hulk_token",
+								"value": "1e29bd03a6cef4d4282e9947b676bd5b",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"closingDatetime\":\"2017-03-22 16:00\",\n\t\"openingDatetime\":\"2017-03-22 18:00\", \n\t\"matchConfigId\":1, \n\t\"perHand\":200,\n\t\"status\": 1, \n\t\"creator\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "更新赛事",
+					"request": {
+						"url": "localhost:7001/match/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":2,\n\t\"closingDatetime\":\"2017-03-21 16:00\",\n\t\"openingDatetime\":\"2017-03-21 18:00\", \n\t\"matchConfigId\":1, \n\t\"status\": 1, \n\t\"updator\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "更新状态",
+					"request": {
+						"url": "localhost:7001/match/changeStatus",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":2,\n\t\"status\": 2, \n\t\"updator\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查找赛事",
+					"request": {
+						"url": "localhost:7001/match/findMatches",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查找赛事by id",
+					"request": {
+						"url": "localhost:7001/match/findMatchById?id=1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "赛事价格ok",
+			"description": "",
+			"item": [
+				{
+					"name": "创建赛事价格",
+					"request": {
+						"url": "localhost:7001/matchPrice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\":1,\n\t\"price\":200,\n\t\"status\":1,\n\t\"creator\":1,\n\t\"matchConfigId\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询赛事价格",
+					"request": {
+						"url": "localhost:7001/matchPrice/findAll?matchConfigId=1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\":1,\n\t\"price\":100,\n\t\"status\":1,\n\t\"creator\":1,\n\t\"matchId\":2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "修改价格",
+					"request": {
+						"url": "localhost:7001/matchPrice/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"type\":3,\n\t\"price\":500\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "修改状态",
+					"request": {
+						"url": "localhost:7001/matchPrice/changeStatus",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":2,\n\t\"status\":2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "赛事奖励ok",
+			"description": "",
+			"item": [
+				{
+					"name": "创建赛事奖励",
+					"request": {
+						"url": "localhost:7001/matchReward/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ranking\":1,\n\t\"rewardPoints\":30,\n\t\"status\":1,\n\t\"creator\":1,\n\t\"matchConfigId\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "获取赛事奖励",
+					"request": {
+						"url": "localhost:7001/matchReward/findAll?matchConfigId=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "修改赛事奖励",
+					"request": {
+						"url": "localhost:7001/matchReward/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"ranking\":2,\n\t\"rewardPoints\":30\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "修改状态",
+					"request": {
+						"url": "localhost:7001/matchReward/changeStatus",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"status\":2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "赛事类型ok",
+			"description": "",
+			"item": [
+				{
+					"name": "新建类型",
+					"request": {
+						"url": "localhost:7001/matchType/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"下午场\",\n\t\"pid\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "更改状态",
+					"request": {
+						"url": "localhost:7001/matchType/changeStatus",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"status\":2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "更新",
+					"request": {
+						"url": "localhost:7001/matchType/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"name\":\"SNG\",\n\t\"pid\":0\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询",
+					"request": {
+						"url": "localhost:7001/matchType/findByPid",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"name\":\"SNG\",\n\t\"pid\":0\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "赛事配置ok",
+			"description": "",
+			"item": [
+				{
+					"name": "创建赛事配置",
+					"request": {
+						"url": "localhost:7001/matchConfig/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"盛世杯\",\n    \"type\": 1,\n    \"subType\":2,\n    \"description\": \"盛世杯全国大奖赛\",\n    \"holder\": \"豪客俱乐部\",\n    \"status\": 1,\n    \"creator\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "赛事查询配置",
+					"request": {
+						"url": "localhost:7001/matchConfig/findMatchConfigs?name=盛世",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "关闭赛事",
+					"request": {
+						"url": "localhost:7001/matchConfig/changeStatus",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"status\":1,\n\t\"updator\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "更新赛事配置",
+					"request": {
+						"url": "localhost:7001/matchConfig/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"name\": \"盛世杯\",\n    \"type\": 1,\n    \"subType\":2,\n    \"perHand\": 5001,\n    \"description\": \"盛世杯全国大奖赛\",\n    \"holder\": \"豪客俱乐部1111\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "所有赛事配置",
+					"request": {
+						"url": "http://115.159.94.198:7003/matchConfig/findAll",
+						"method": "GET",
+						"header": [
+							{
+								"key": "hulk_token",
+								"value": "1e29bd03a6cef4d4282e9947b676bd5b",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
